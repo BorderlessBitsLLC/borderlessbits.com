@@ -88,9 +88,9 @@ const ciJestConfig = {
   
   // Transform configuration with explicit Babel config
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { 
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', {
       presets: ['next/babel'],
-      configFile: '<rootDir>/babel.config.js',
+      configFile: '<rootDir>/babel.test.config.js',
       envName: 'test',
     }],
   },

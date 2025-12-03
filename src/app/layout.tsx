@@ -1,13 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import '../styles/globals.css';
-
-// Font optimization
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
 
 // Base metadata configuration
 export const metadata: Metadata = {
@@ -107,17 +99,8 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <head>
-        {/* Preload critical resources */}
-        <link
-          rel="preload"
-          href="/fonts/inter-var.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-
         {/* Favicon and app icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -136,6 +119,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Load Inter font from Google Fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
 
         {/* Structured data for business */}
         <script
@@ -214,7 +203,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
       </head>
-      <body className={`${inter.className} font-sans antialiased`} suppressHydrationWarning={true}>
+      <body className="font-sans" suppressHydrationWarning={true}>
         {/* Skip to main content for accessibility */}
         <a
           href="#main-content"
