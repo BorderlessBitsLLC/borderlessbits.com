@@ -117,7 +117,7 @@ jobs:
           path: |
             audit-results.json
             trivy-results.sarif
-          retention-days: 30
+          retention-days: 1
 
   # ==========================================
   # SECRETS SCANNING
@@ -389,7 +389,7 @@ jobs:
         with:
           name: license-report-${{ github.sha }}
           path: licenses.json
-          retention-days: 30
+          retention-days: 1
 
   # ==========================================
   # SECURITY REPORT AGGREGATION
