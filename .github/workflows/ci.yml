@@ -201,7 +201,7 @@ jobs:
           path: |
             out/
             .next/
-          retention-days: 7
+          retention-days: 1
 
   # ==========================================
   # LIGHTHOUSE PERFORMANCE AUDIT
