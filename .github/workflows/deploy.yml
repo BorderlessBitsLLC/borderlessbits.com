@@ -77,7 +77,7 @@ jobs:
           path: |
             coverage/
             test-results.xml
-          retention-days: 7
+          retention-days: 1
 
   # Build and Performance Testing
   build-and-test:
@@ -167,7 +167,7 @@ jobs:
         with:
           name: build-files-${{ matrix.node-version }}
           path: out/
-          retention-days: 7
+          retention-days: 1
 
       - name: Upload bundle analysis
         uses: actions/upload-artifact@v4
@@ -177,7 +177,7 @@ jobs:
           path: |
             .next/analyze/
             bundle-analyzer-report.html
-          retention-days: 7
+          retention-days: 1
 
   # Deploy to GitHub Pages (Production)
   deploy-production:
@@ -337,7 +337,7 @@ jobs:
           path: |
             audit-results.json
             snyk-results.json
-          retention-days: 30
+          retention-days: 1
 
   # Cleanup old workflow runs
   cleanup:
